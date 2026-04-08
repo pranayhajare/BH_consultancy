@@ -1,0 +1,232 @@
+.coe {
+  padding: var(--section-padding);
+  background: var(--neutral-50);
+}
+
+.coe__wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+  background: var(--primary-900);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 64px;
+}
+
+/* Keep dark background on hover — prevent glass-card from washing it out */
+.coe__wrapper.glass-card:hover {
+  background: var(--primary-800);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.coe__content {
+  color: #fff;
+}
+
+/* Ensure all white text stays visible on hover */
+.coe__wrapper:hover .coe__title {
+  color: #fff;
+}
+
+.coe__wrapper:hover .coe__desc {
+  color: var(--accent-200);
+}
+
+.coe__wrapper:hover .coe__feature h4 {
+  color: var(--accent-300);
+}
+
+.coe__wrapper:hover .coe__feature p {
+  color: var(--neutral-100);
+  opacity: 1;
+}
+
+.coe__wrapper:hover .coe__label {
+  color: var(--neutral-200);
+}
+
+
+.coe__badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(212, 160, 23, 0.2);
+  color: var(--accent-400);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+}
+
+.coe__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.coe__desc {
+  font-size: 1.05rem;
+  color: #ffffff;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.coe__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.coe__feature {
+  position: relative;
+  padding-left: 20px;
+}
+
+.coe__feature::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-400);
+  border-radius: 50%;
+}
+
+.coe__feature h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.coe__feature p {
+  font-size: 0.85rem;
+  color: #ffffff;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Mockup Graphic */
+.coe__image-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coe__mockup {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.coe__mockup-header {
+  height: 32px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.coe__mockup-header span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.coe__mockup-header span:nth-child(1) {
+  background: #ff5f56;
+}
+
+.coe__mockup-header span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.coe__mockup-header span:nth-child(3) {
+  background: #27c93f;
+}
+
+.coe__mockup-body {
+  padding: 32px;
+}
+
+.coe__stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.coe__stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.coe__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-400);
+  margin-bottom: 8px;
+}
+
+.coe__label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.coe__shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 1;
+}
+
+.coe__shape-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(59, 125, 212, 0.3);
+  top: -50px;
+  right: -50px;
+}
+
+.coe__shape-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(212, 160, 23, 0.2);
+  bottom: -50px;
+  left: -50px;
+}
+
+@media (max-width: 992px) {
+  .coe__wrapper {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .coe__features {
+    grid-template-columns: 1fr;
+  }
+}

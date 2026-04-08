@@ -1,0 +1,215 @@
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.cm-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cm-content {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.cm-content.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cm-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.cm-close:hover {
+  color: #c9a84c;
+}
+
+.cm-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cm-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cm-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.cm-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.cm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cm-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.cm-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cm-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.cm-group input[type="text"],
+.cm-group input[type="email"],
+.cm-group input[type="tel"],
+.cm-group select,
+.cm-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  transition: border-color 0.2s, background-color 0.2s;
+  background: #fdfdfd;
+}
+
+.cm-group input:focus,
+.cm-group select:focus,
+.cm-group textarea:focus {
+  outline: none;
+  border-bottom-color: #c9a84c;
+  background: #ffffff;
+}
+
+.cm-radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cm-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.cm-radio input[type="radio"] {
+  accent-color: #c9a84c;
+  width: 16px;
+  height: 16px;
+}
+
+.cm-submit {
+  width: 100%;
+  background-color: #c9a84c;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.cm-submit:hover:not(:disabled) {
+  background-color: #b5953f;
+  transform: translateY(-2px);
+}
+
+.cm-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cm-success-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.cm-success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.cm-success-state h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.cm-success-state p {
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .cm-content {
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    max-height: 95vh;
+  }
+  .cm-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .cm-radio-group {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
