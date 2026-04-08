@@ -1,0 +1,5 @@
+/* Standalone Pages Top Padding */
+.standalone-page {
+  padding-top: 72px; 
+  min-height: 100vh;
+}
